@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About and Contact</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #a5cba7; /* Green background */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .container {
+        background-image: url('/Users/sheikh/Documents/port2.jpg'); /* Add the path to your image */
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px;
+        padding: 60px;
+        margin: 20px; /* Adjust margin to create more space around the box */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        text-align: center;
+    }
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+    button:hover {
+        background-color: #45a049;
+    }
+    .details {
+        text-align: left;
+        margin-bottom: 20px;
+    }
+    .details h3 {
+        margin-bottom: 10px;
+    }
+    .form-input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    .form-button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+    .form-button:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Ahmad Bilal</h2>
+    <h3>Web Developer | Computer Scientist</h3>
+    <button onclick="showAboutSection()">About Us</button>
+    <button onclick="showContactSection()">Contact Us</button>
+
+    <div id="aboutDiv" style="display: none;">
+        <div class="details">
+            <h3>About Me</h3>
+            <p>Motivated and ambitious rising junior in BS Computer Science at Fast university  with a strong passion for web development and programming. Seeking an internship opportunity to gain hands-on experience and contribute to real-world projects. Proficient in MERN stack web development, Haskell, socket programming, Python, C++, JavaScript, and TypeScript. Possesses a solid foundation in computer science principles and a quick learner when it comes to new technologies. Committed to delivering high-quality code and collaborating effectively within a team. Eager to apply my skills and knowledge to make a meaningful impact in the field of software development.</p>
+        </div>
+        <div class="details">
+            <h3>Skills</h3>
+            <p>HTML, CSS, JavaScript</p>
+        </div>
+        <div class="details">
+            <h3>Projects</h3>
+            <p><a href="https://github.com/Ahmadbsheikh/huffman-" target="_blank">https://github.com/Ahmadbsheikh/huffman-</a><br>
+               <a href="https://github.com/Ahmadbsheikh/database-management-system" target="_blank">https://github.com/Ahmadbsheikh/database-management-system</a></p>
+        </div>
+        
+        <div class="details">
+            <h3>Education</h3>
+            <p>BS Computer Science at Fast University</p>
+        </div>
+    </div>
+
+    <div id="contactDiv" style="display: none;">
+        <h2>Contact Us</h2>
+        <form id="contactForm" onsubmit="return validateContact()">
+            <input type="text" id="name" class="form-input" placeholder="Your Name" required>
+            <input type="email" id="email" class="form-input" placeholder="Your Email" required>
+            <textarea id="message" class="form-input" placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit" class="form-button">Submit</button>
+        </form>
+    </div>
+</div>
+
+<script>
+function showAboutSection() {
+    document.getElementById("aboutDiv").style.display = "block";
+    document.getElementById("contactDiv").style.display = "none";
+}
+
+function showContactSection() {
+    document.getElementById("aboutDiv").style.display = "none";
+    document.getElementById("contactDiv").style.display = "block";
+}
+
+function validateContact() {
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var message = document.getElementById("message").value;
+
+    if (name.trim() === "") {
+        alert("Please enter your name");
+        return false;
+    }
+
+    if (email.trim() === "") {
+        alert("Please enter your email");
+        return false;
+    }
+
+    if (message.trim() === "") {
+        alert("Please enter your message");
+        return false;
+    }
+
+    return true;
+}
+</script>
+
+</body>
+</html>
